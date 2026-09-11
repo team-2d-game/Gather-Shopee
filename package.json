@@ -1,0 +1,17 @@
+{
+  "name": "gather-shopee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive 2D Virtual Space with Real-time WebSocket synchronization",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
